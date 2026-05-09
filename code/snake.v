@@ -5,17 +5,20 @@ module snake #(
     parameter CLK_DIV = 2000
 )(
     output reg [63:0] snake_flat,
+    output reg game_run ,
+    output reg [6:0] snake_length ,
+
     input [1:0] direction,
     input wire clk,
     input wire rst
 );
 
     reg [2:0] position [63:0][1:0];
-    reg [6:0] snake_length;
+    // reg [6:0] snake_length;
     integer i, j;
     reg [$clog2(CLK_DIV+1)-1:0] counter;
     reg [1:0] dir;
-    reg game_run;
+    // reg game_run;
     reg [5:0] food_position;
     reg food_positioned;
     reg food_eaten;          
