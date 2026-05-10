@@ -29,18 +29,18 @@ module sequencer #(parameter count_to = 67108864) (
         end
         else begin
             if (counter == count_to) begin
-                if ( ones == 0 and tens == 0 ) begin 
+                if ( ones == 0 && tens == 0 ) begin 
                     ascii_out <= 0 ;
                 end
-                else begin
+                else if ( tens == 0 ) begin
                     case (state_seq)
-                        5'd0  : begin ascii_out <= (30 + ones) ; state_seq <= 5'd1;  end
+                        5'd0  : begin ascii_out <= (30 + ones) ; state_seq <= 5'd2;  end
                         // 5'd1  : begin ascii_out <= 8'h36; state_seq <= 5'd2;  end
                         5'd2  : begin ascii_out <= 8'h21; state_seq <= 5'd3;  end
-                        5'd3  : begin ascii_out <= (30 + ones) ; state_seq <= 5'd4;  end
+                        5'd3  : begin ascii_out <= (30 + ones) ; state_seq <= 5'd5;  end
                         // 5'd4  : begin ascii_out <= 8'h36; state_seq <= 5'd5;  end
                         5'd5  : begin ascii_out <= 8'h21; state_seq <= 5'd6;  end
-                        5'd6  : begin ascii_out <= (30 + ones) ; state_seq <= 5'd7;  end
+                        5'd6  : begin ascii_out <= (30 + ones) ; state_seq <= 5'd8;  end
                         // 5'd7  : begin ascii_out <= 8'h36; state_seq <= 5'd8;  end
                         5'd8  : begin ascii_out <= 8'h21; state_seq <= 5'd9;  end
                         5'd9  : begin ascii_out <= 8'h21; state_seq <= 5'd10; end
@@ -62,17 +62,17 @@ module sequencer #(parameter count_to = 67108864) (
                 end
                 else begin
                     case (state_seq)
-                    5'd0  : begin ascii_out <= (30 + ones) ; state_seq <= 5'd1;  end
+                    5'd0  : begin ascii_out <= (30 + ones); state_seq <= 5'd1;  end
                     5'd1  : begin ascii_out <= (30 + tens); state_seq <= 5'd2;  end
-                    5'd2  : begin ascii_out <= 8'h21; state_seq <= 5'd3;  end
-                    5'd3  : begin ascii_out <= (30 + ones) ; state_seq <= 5'd4;  end
-                    5'd4  : begin ascii_out <= (30 + tens) ; state_seq <= 5'd5;  end
-                    5'd5  : begin ascii_out <= 8'h21; state_seq <= 5'd6;  end
-                    5'd6  : begin ascii_out <= (30 + ones) ; state_seq <= 5'd7;  end
-                    5'd7  : begin ascii_out <= (30 + tens) ; state_seq <= 5'd8;  end
-                    5'd8  : begin ascii_out <= 8'h21; state_seq <= 5'd9;  end
-                    5'd9  : begin ascii_out <= 8'h21; state_seq <= 5'd10; end
-                    5'd10 : begin ascii_out <= 8'h21;                     end
+                    5'd2  : begin ascii_out <=       8'h21; state_seq <= 5'd3;  end
+                    5'd3  : begin ascii_out <= (30 + ones); state_seq <= 5'd4;  end
+                    5'd4  : begin ascii_out <= (30 + tens); state_seq <= 5'd5;  end
+                    5'd5  : begin ascii_out <=       8'h21; state_seq <= 5'd6;  end
+                    5'd6  : begin ascii_out <= (30 + ones); state_seq <= 5'd7;  end
+                    5'd7  : begin ascii_out <= (30 + tens); state_seq <= 5'd8;  end
+                    5'd8  : begin ascii_out <=       8'h21; state_seq <= 5'd9;  end
+                    5'd9  : begin ascii_out <=       8'h21; state_seq <= 5'd10; end
+                    5'd10 : begin ascii_out <= 8'h21;                           end
                     
                     // 5'd11 : begin ascii_out <= 8'h33; state_seq <= 5'd12; end
                     // 5'd12 : begin ascii_out <= 8'h21; state_seq <= 5'd13; end
