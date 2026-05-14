@@ -6,6 +6,11 @@ This project is an implementation of the old snake game, the whole code of it is
 [Demo Video](assets/demo_video.mp4)
 
 ---
+### Hardware:
+the hardware that i used is Nexys A7 100T (Xilinx Artix-7), the proj used about 5% of the LUTs, previously i had tested the codes on spartan 3 and that board was not able to synthesize the game, probably because it doesn't have dsp units! 
+
+---
+
 ### Game logic:
 the logic that i used is fairly simple : 
 - the only thing that needs to be calculated is the snake head. the direction module tells the snake module the direction that the snake will go in the next move, and the snake module calculates the new snake-head position!
