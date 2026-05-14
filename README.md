@@ -2,7 +2,8 @@
 This project is an implementation of the old snake game, the whole code of it is written in Verilog so basically the game is just hardware acting like software.
 <!-- ![Demo](assets/demo.gif) -->
 ![Demo](assets/demo_pic.jpg)
-[Demo Video](assets/)
+<!-- [Demo Video](assets/) -->
+[Demo Video](assets/demo_video.mp4)
 
 ---
 ### Game logic:
