@@ -1,12 +1,14 @@
-
 `timescale 1ns / 1ps
 
 //---------------------------------------------------------------------------------------------------------------------------
 // the display is a dotmatrix : 8 row * 8 col 
-//      --> R is HIGHs
-//      --> C is LOWs
+//      --> R is HIGH 
+//      --> C is LOW
 //
-//  (count_to) parameter is the amount of time that every row has for being on!
+// PARAMETER:
+//      count_to : how many clock cycles each row stays active
+//                       default = 2000
+//                       the counter width is auto-calculated from this value
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------

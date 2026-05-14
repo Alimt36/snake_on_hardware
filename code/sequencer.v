@@ -41,7 +41,7 @@ module sequencer #(parameter count_to = 67108864) (
                         5'd6  : begin ascii_out <= (8'h30  + ones) ; state_seq <= 5'd8 ; end
                         5'd8  : begin ascii_out <=  8'h21 ;          state_seq <= 5'd9 ; end
                         5'd9  : begin ascii_out <=  8'h21 ;          state_seq <= 5'd10; end
-                        5'd10 : begin ascii_out <=  8'h21 ;                              end
+                        5'd10 : begin ascii_out <=  8'h21 ;          state_seq <= 5'd0 ; end
                         
                         default: begin ascii_out <= 8'h21; state_seq <= 5'd0; end
                     endcase
@@ -58,7 +58,7 @@ module sequencer #(parameter count_to = 67108864) (
                     5'd7  : begin ascii_out <= (8'h30  + ones); state_seq <= 5'd8;  end
                     5'd8  : begin ascii_out <=  8'h21;          state_seq <= 5'd9;  end
                     5'd9  : begin ascii_out <=  8'h21;          state_seq <= 5'd10; end
-                    5'd10 : begin ascii_out <=  8'h21;                              end
+                    5'd10 : begin ascii_out <=  8'h21;          state_seq <= 5'd0 ; end
                     
                     default: begin ascii_out <= 8'h21; state_seq <= 5'd0; end
                     endcase

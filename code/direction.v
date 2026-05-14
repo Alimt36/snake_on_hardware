@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 
 module direction_maker(
     output reg [1:0] dir ,
